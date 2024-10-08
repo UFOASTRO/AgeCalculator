@@ -15,9 +15,11 @@ const monthHead = document.getElementById("monthHead");
 const yearHead = document.getElementById("yearHead");
 const yearerrormsg = document.getElementById("yearerrormsg");
 const currentDate = new Date();
-const currentMonth = currentDate.getMonth() + 1; // getMonth() returns 0-11, so we add 1
+const currentDay =  String(currentDate.getDate()).padStart(2, '0');
+const currentMonth = Number(currentDate.getMonth() + 1); // getMonth() returns 0-11, so we add 1
 const currentYear = currentDate.getFullYear();
-
+let NumOfDaysInMonth = 31;
+const shortMonths = NumOfDaysInMonth = 30;
 
 // CHECKS IF INPUT VALUES ARE NULL AND RETURNS AN ERROR
   if (year === "" || days == "" || month === "") {
@@ -71,27 +73,51 @@ const currentYear = currentDate.getFullYear();
     dayHead.style.color = " rgb(107 114 128)";
     monthHead.style.color = " rgb(107 114 128)";
     yearHead.style.color = " rgb(107 114 128)";
+   
     // CALCULATE DAYS
-    const AgeInDays =   31 - days;
+    let AgeInDays =    NumOfDaysInMonth - days + Number(currentDay) + 1 ;
+    
+    if (AgeInDays >= 31){
+        AgeInDays = AgeInDays % 31;
+      }
+
+      if(month == currentMonth && days > Number(currentDay)){
+        AgeInDays = days - currentDay;
+      }
+
+     if(month == 9 || month == 4 || month == 6 || month == 11){
+       AgeInDays =  shortMonths - days + Number(currentDay)
+       if (AgeInDays > shortMonths){
+        AgeInDays = AgeInDays % 30;
+      }
+     }
 
     // CALCULATE MONTH
     let AgeInMonths =  currentMonth - month ;
-     if (month > currentMonth ){
+     if (month == currentMonth) {
+     AgeInMonths = AgeInMonths + 1 ; // If the birth month is the current month
+ }
+     if (month > currentMonth){
         AgeInMonths = currentMonth + 12 - month ;  
+     }
+     if(currentDay < days){
+       AgeInMonths = AgeInMonths - 1;
      }
      // febuary
      if(month === 2){
       if(days > 28){
         AgeInMonths = AgeInMonths - 1;
       }
-      if(currentYear % 4 === 0 && currentYear % 100!== 0 || currentYear % 400 === 0){
-        AgeInMonths = AgeInMonths - 1;
-      }
+    
      }
+
     // CALCULATE YEAR
     let AgeInYear = currentYear - year;
  if(month>currentMonth){
     AgeInYear = AgeInYear - 1;
+ }
+ if(days >= currentDay ){
+  AgeInYear--
  }
     // display calculated values
     displayYear.textContent = AgeInYear;
