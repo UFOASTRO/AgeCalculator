@@ -60,6 +60,14 @@ const shortMonths = NumOfDaysInMonth = 30;
     monthHead.style.color = "#ff5757";
     month.style.borderColor= "#ff5757";
 } 
+else if(NumOfDaysInMonth && month == 9 || month == 4 || month == 6 || month == 11){
+  dayerrormsg.textContent="Must be a valid date";
+  dayHead.style.color = "#ff5757";
+  monthHead.style.color = "#ff5757";
+  year.style.borderColor = "#ff5757";
+  days.style.borderColor= "#ff5757";
+  month.style.borderColor= "#ff5757";
+}
 
 // IF ALL THESE CONDITIONS PASSED  THEN REMOVE ALL ERROR MESSAGES , CHANGE THE LABEL OF EACH INPUT FIELD FROM RED TO THE PREVIOUS COLOR , CALCULATE THE
 // DAYS FROM THIER LAST BIRTHDAY -- WHICH RESETS EACH MONTH , CALCULATE THE MONTHS FROM THIER LAST BIRTHDAY -- IF THE BIRTHMONTH IS GREATER THAN THE CURRENT 
@@ -113,10 +121,10 @@ const shortMonths = NumOfDaysInMonth = 30;
 
     // CALCULATE YEAR
     let AgeInYear = currentYear - year;
- if(month>currentMonth){
+ if(month > currentMonth){
     AgeInYear = AgeInYear - 1;
  }
- if(days >= currentDay && month==currentMonth ){
+ if(days >= currentDay && month ==currentMonth ){
   AgeInYear--
  }
     // display calculated values
