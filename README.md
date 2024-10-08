@@ -1,6 +1,6 @@
 # Age Calculator App
 
-![Age Calculator App](image.png) <!-- Replace with the actual path to your image -->
+![Age Calculator App](https://github.com/[UFOASTRO]/[AgeCalculator]/blob/[main]/image.png?raw=true) <!-- Replace with the actual path to your image -->
 
 ## Description
 
