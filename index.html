@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Age Calculator</title>
+  </head>
+  <body class="bg-gray-100 flex items-center justify-center min-h-screen ">
+    <div class="bg-white shadow-lg p-10 w-5/12 rounded-br-[30%] ">
+        <div class="flex justify-between mb-6" style="font-family: 'poppins', sans-serif;">
+          <div class="text-center">
+            <label class="block text-gray-500 text-xs mb-2 font-bold" id="dayHead">DAY</label>
+            <input type="text" placeholder="DD" class="border border-gray-300 rounded-lg w-20 h-12 text-center text-gray-500 text-lg font-bold  focus:border-violet-700 focus:outline-none" id="day">
+            <br><span id="dayerrormsg" class="text-[#ff5757] text-xs"  style="position: relative; top: 5px;"></span>
+          </div>
+            <div class="text-center">
+              <label class="block text-gray-500 text-xs mb-2 font-bold" id="monthHead">MONTH</label>
+              <input type="text" placeholder="MM" class="border border-gray-300 rounded-lg w-20 h-12 text-center text-gray-500 text-lg font-bold  focus:border-violet-700 focus:outline-none" id="month">
+             <br><span id="montherrormsg" class="text-[#ff5757] text-xs"  style="position: relative; top: 5px;"></span>
+            </div>
+            <div class="text-center">
+              <label class="block text-gray-500 text-xs mb-2 font-bold" id="yearHead">YEAR</label>
+              <input type="text" placeholder="YYYY" class="border border-gray-300 rounded-lg w-20 h-12 text-center text-gray-500 text-lg font-bold focus:border-violet-700 focus:outline-none" id="year">
+              <br><span id="yearerrormsg" class="text-[#ff5757] text-xs" style="position: relative; top: 5px;"></span>
+            </div>
+        </div>
+        <hr>
+        <br>
+        <div class="flex justify-end mb-6" onclick="calculate()">
+          <div class="bg-purple-500 rounded-full w-12 h-12 flex items-center justify-center" id="button">
+            <i class="fas fa-arrow-down text-white"></i>
+          </div>
+        </div>
+        <div class="text-6xl font-bold" style="font-family: 'poppins', sans-serif;">
+          <div class="flex items-center mb-4">
+            <span class="text-purple-500 mr-2" id="dispyears" >--</span>
+            <span id="dispyears" >years</span>
+          </div>
+          <div class="flex items-center mb-4">
+            <span class="text-purple-500 mr-2" id="dispmonths">--</span>
+            <span>months</span>
+          </div>
+          <div class="flex items-center">
+            <span class="text-purple-500 mr-2" id="dispday">--</span>
+            <span>days</span>
+          </div>
+        </div>
+      </div>
+      <script src="index.js"></script>
+</body>
+</html>
