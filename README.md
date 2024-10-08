@@ -1,6 +1,6 @@
 # Age Calculator App
 
-![Age Calculator App](path/to/your/image.png) <!-- Replace with the actual path to your image -->
+![Age Calculator App](image.png) <!-- Replace with the actual path to your image -->
 
 ## Description
 
