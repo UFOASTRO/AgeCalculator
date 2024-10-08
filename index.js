@@ -116,7 +116,7 @@ const shortMonths = NumOfDaysInMonth = 30;
  if(month>currentMonth){
     AgeInYear = AgeInYear - 1;
  }
- if(days >= currentDay ){
+ if(days >= currentDay && month==currentMonth ){
   AgeInYear--
  }
     // display calculated values
