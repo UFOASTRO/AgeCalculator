@@ -33,7 +33,7 @@ const shortMonths = NumOfDaysInMonth = 30;
   } 
 
   // IF INPUT FIELDS ARE NOT EMPTY THEN CHECK IF YEARS ARE VALID AND IF DAY ARE VALID AND IF MONTH ARE VALID
-  else if(year < 1800 &&  year >= 2024 || isNaN(year) && days < 1 && days > 31 || isNaN(days) && month < 1 &&  month > 12 || isNaN(month)){
+  else if(year < 1800 &&  year >= currentYear || isNaN(year) && days < 1 && days > 31 || isNaN(days) && month < 1 &&  month > 12 || isNaN(month)){
     dayerrormsg.textContent="Must be a valid date";
     year.style.borderColor = "#ff5757";
     days.style.borderColor= "#ff5757";
@@ -41,7 +41,7 @@ const shortMonths = NumOfDaysInMonth = 30;
   }
 
   // IF ALL INPUT FIELDS ARE VALID CHECK IF YEARS IS VALID ONLY IF NOT GIVE A PERSONALIZED ERROR 
-  else if (year < 1800 || year >= 2024 || isNaN(year)) {
+  else if (year < 1800 || year >= currentYear || isNaN(year)) {
       yearerrormsg.textContent="Must be a valid year";
       yearHead.style.color = "#ff5757";
       year.style.borderColor = "#ff5757";
@@ -60,7 +60,8 @@ const shortMonths = NumOfDaysInMonth = 30;
     monthHead.style.color = "#ff5757";
     month.style.borderColor= "#ff5757";
 } 
-else if(NumOfDaysInMonth && month == 9 || month == 4 || month == 6 || month == 11){
+// NO STRESS MY LIFE ABEG 
+else if( [4, 6, 9, 11].includes(Number(month)) && Number(days) === 31 ){
   dayerrormsg.textContent="Must be a valid date";
   dayHead.style.color = "#ff5757";
   monthHead.style.color = "#ff5757";
